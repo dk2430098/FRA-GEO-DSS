@@ -117,10 +117,17 @@ const ClaimUpload: React.FC = () => {
     toast.success('Claim data updated!');
   };
 
-  const submitClaim = (claimId: string) => {
-    // Mock API call to submit claim
-    toast.success('Claim submitted for processing!');
-  };
+ const submitClaim = (claimId: string) => {
+  setUploadedClaims(prev =>
+    prev.map(claim =>
+      claim.id === claimId
+        ? { ...claim, status: 'processing' } 
+        : claim
+    )
+  );
+
+  toast.success('Claim submitted for processing!');
+};
 
   return (
     <div className="space-y-6">

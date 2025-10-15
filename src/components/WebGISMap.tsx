@@ -157,7 +157,8 @@ const WebGISMap: React.FC = () => {
             {/* Claims */}
             {activeLayers.claims &&
               claimMarkers.map(marker => (
-                <Marker key={marker.id} position={marker.position} icon={L.divIcon({ className: `bg-${getStatusColor(marker.status)}-500 w-4 h-4 rounded-full` })}>
+                <Marker key={marker.id} position={marker.position as [number, number]} icon={L.divIcon({ className: `bg-${getStatusColor(marker.status)}-500 w-4 h-4 rounded-full` })}>
+                  
                   <Popup>
                     <div className="p-2">
                       <h4 className="font-medium text-zinc-800">{marker.claimant}</h4>
@@ -174,7 +175,7 @@ const WebGISMap: React.FC = () => {
               villageBoundaries.map(boundary => (
                 <Polygon
                   key={boundary.id}
-                  positions={boundary.coordinates}
+                  positions={boundary.coordinates as [number, number][]}
                   pathOptions={{ color: '#4B5563', weight: 2, fillOpacity: 0.1 }}
                 >
                   <Popup>
