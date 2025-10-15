@@ -117,23 +117,24 @@ const Home: React.FC = () => {
           {/* Claim Types Pie Chart */}
           <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
             <h3 className="text-lg font-semibold text-zinc-800 mb-4">Claim Types Distribution</h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie
-                  data={claimTypeData}
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={80}
-                  dataKey="value"
-                  label={({ name, value }) => `${value}%`}
-                >
-                  {claimTypeData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
+           <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={claimTypeData}
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                dataKey="value"
+                label={({ value }) => `${value}%`}   // ✅ removed unused 'name'
+              >
+                {claimTypeData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+
             <div className="mt-4 space-y-2">
               {claimTypeData.map((item, index) => (
                 <div key={index} className="flex items-center space-x-2 text-sm">
