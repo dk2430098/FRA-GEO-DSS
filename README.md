@@ -14,7 +14,7 @@
 
 **FRA-GEO-DSS Governance Framework** is a web-based Decision Support System (DSS) developed by **Team Mirai**. It is designed to assist in governance and risk assessment, featuring modules for claims management, geospatial visualization (WebGIS), and workflow tracking.
 
-> **Note**: This project appears to be focused on **Flood Risk Assessment (FRA)** and utilizes geospatial data for decision support, as indicated by the initial project configuration.
+> **Note**: This project appears to be focused on **Forest Rights Act (FRA)** and utilizes geospatial data for decision support, as indicated by the initial project configuration.
 
 ## Features
 
